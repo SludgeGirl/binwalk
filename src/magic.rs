@@ -1229,6 +1229,17 @@ pub fn patterns() -> Vec<signatures::common::Signature> {
             description: signatures::hashes::MD5_DESCRIPTION.to_string(),
             extractor: None,
         },
+        // OGG
+        signatures::common::Signature {
+            name: "ogg".to_string(),
+            short: false,
+            magic_offset: 0,
+            always_display: false,
+            magic: signatures::ogg::ogg_magic(),
+            parser: signatures::ogg::ogg_parser,
+            description: signatures::ogg::DESCRIPTION.to_string(),
+            extractor: Some(extractors::ogg::ogg_extractor()),
+        },
     ];
 
     binary_signatures

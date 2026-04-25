@@ -139,6 +139,7 @@ pub mod matter_ota;
 pub mod mbr;
 pub mod mh01;
 pub mod ntfs;
+pub mod ogg;
 pub mod openssl;
 pub mod packimg;
 pub mod pcap;
