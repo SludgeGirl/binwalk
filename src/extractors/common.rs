@@ -1009,12 +1009,12 @@ pub fn execute(
         }
 
         // Clean up extractor's output directory if extraction failed
-        if !result.success {
-            if let Err(e) = fs::remove_dir_all(&output_directory) {
-                warn!(
-                    "Failed to clean up extraction directory {output_directory} after extraction failure: {e}"
-                );
-            }
+        if !result.success
+            && let Err(e) = fs::remove_dir_all(&output_directory)
+        {
+            warn!(
+                "Failed to clean up extraction directory {output_directory} after extraction failure: {e}"
+            );
         }
     }
 
